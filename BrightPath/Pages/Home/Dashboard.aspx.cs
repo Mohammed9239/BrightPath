@@ -12,13 +12,6 @@ namespace BrightPath.Pages.Home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string selectSql = "SELECT empnma FROM empmas WHERE empcode = @empcode";
-            var parametersForSelect = new Dictionary<string, object>
-        {
-            { "@empcode", 128 }
-        };
-
-            string name = SqlHelper.SelectField(selectSql, parametersForSelect);
         }
     }
 }

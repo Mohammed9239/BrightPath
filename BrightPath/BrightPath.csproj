@@ -164,6 +164,8 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MainHelper.cs" />
+    <Compile Include="Helpers\EnumDatabaseVariables.cs" />
     <Compile Include="Helpers\SqlHelper.cs" />
     <Compile Include="Pages\Appointments\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

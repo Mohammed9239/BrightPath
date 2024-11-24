@@ -81,31 +81,38 @@
               <div class="text-center text-muted mb-4">
                 <small>تسجيل الدخول</small>
               </div>
-              <form role="form">
 
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-user"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="اسم المستخدم" type="email">
-                  </div>
+                <div>
+
+                    <div>
+    <div class="form-group mb-3">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="اسم المستخدم" TextMode="SingleLine"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+            </div>
+            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="كلمة المرور" TextMode="Password"></asp:TextBox>
+        </div>
+    </div>
+
+                                                <asp:Label ID="lblValidation" runat="server" CssClass="text-danger" Visible="false" />
+
+    <div class="text-center">
+        <asp:Button ID="btnLogin" runat="server" Text="دخول" CssClass="btn btn-primary my-4" OnClick="btnLogin_Click" />
+    </div>
+</div>
+
+
                 </div>
 
-                <div class="form-group">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="كلمة المرور" type="password">
-                  </div>
-                </div>
-                
-                <div class="text-center">
-                  <a href='Dashboard' class="btn btn-primary my-4">دخول</a>
-                </div>
-
-              </form>
             </div>
           </div>
         </div>

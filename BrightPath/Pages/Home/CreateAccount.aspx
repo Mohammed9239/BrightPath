@@ -75,39 +75,185 @@
     <!-- Page content -->
     <div class="container mt--8 pb-5">
       <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-7">
+        <div class="col-lg-10 col-md-11">
+
           <div class="card bg-secondary shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
                 <small>انشاء حساب جديد</small>
               </div>
-              <form role="form">
 
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                <div class="card-body">
+
+                    <h6 class="heading-small text-muted mb-4">بيانات المستخدم</h6>
+
+                    <div class="pl-lg-4">
+
+
+
+                        <asp:ScriptManager runat="server" />
+
+                        <div class="row">
+                            <!-- نوع المستخدم -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="ddlUserType">نوع المستخدم</label>
+                                    <asp:DropDownList ID="ddlUserType" runat="server" CssClass="form-control form-control-alternative" AutoPostBack="true" OnSelectedIndexChanged="ddlUserType_SelectedIndexChanged">
+                                        <asp:ListItem Text="مدير" Value="1"></asp:ListItem>
+                                        <asp:ListItem Text="مشرف" Value="2"></asp:ListItem>
+                                        <asp:ListItem Text="ولي امر" Value="3"></asp:ListItem>
+                                        <asp:ListItem Text="طفل" Value="4"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+
+                            <!-- اسم المستخدم -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtUsername">اسم المستخدم</label>
+                                    <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control form-control-alternative" Placeholder="mohammed_75" />
+                                    <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="اسم المستخدم مطلوب" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            <!-- كلمة المرور -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtPassword">كلمة المرور</label>
+                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control form-control-alternative" Placeholder="******" />
+                                    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="كلمة المرور مطلوبة" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            <!-- اعادة كلمة المرور -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtConfirmPassword">اعادة كلمة المرور</label>
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="form-control form-control-alternative" Placeholder="******" />
+                                    <asp:RequiredFieldValidator ID="rfvConfirmPassword" runat="server" ControlToValidate="txtConfirmPassword" ErrorMessage="يرجى إعادة كلمة المرور" CssClass="text-danger" Display="Dynamic" />
+                                    <asp:CompareValidator ID="cvPasswords" runat="server" ControlToValidate="txtConfirmPassword" ControlToCompare="txtPassword" ErrorMessage="كلمتا المرور غير متطابقتين" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            <!-- الاسم الكامل -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtFullName">الاسم الكامل</label>
+                                    <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control form-control-alternative" Placeholder="محمد العمودي" />
+                                    <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" ErrorMessage="الاسم الكامل مطلوب" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            <!-- تاريخ الميلاد -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtBirthDate">تاريخ الميلاد</label>
+                                    <asp:TextBox ID="txtBirthDate" runat="server" CssClass="form-control form-control-alternative" TextMode="Date" />
+                                    <asp:RequiredFieldValidator ID="rfvBirthDate" runat="server" ControlToValidate="txtBirthDate" ErrorMessage="تاريخ الميلاد مطلوب" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            
+                            <!-- الهاتف -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtPhone">الهاتف</label>
+                                    <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control form-control-alternative" Placeholder="96650000000" />
+                                    <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone" ErrorMessage="رقم الهاتف مطلوب" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            <!-- البريد الإلكتروني -->
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="txtEmail">البريد الإلكتروني</label>
+                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-alternative" Placeholder="mail@mail.com" />
+                                    <asp:RequiredFieldValidator
+                                        ID="rfvEmail"
+                                        runat="server"
+                                        ControlToValidate="txtEmail"
+                                        ErrorMessage="البريد الإلكتروني مطلوب"
+                                        CssClass="text-danger"
+                                        Display="Dynamic" />
+
+                                    <asp:RegularExpressionValidator
+                                        ID="revEmail"
+                                        runat="server"
+                                        ControlToValidate="txtEmail"
+                                        ErrorMessage="البريد الإلكتروني غير صحيح"
+                                        CssClass="text-danger"
+                                        ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                                        Display="Dynamic" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- بيانات خاصة بالمشرف -->
+                        <div id="ConsultantDataDiv" runat="server" visible="false">
+                            <hr class="my-4">
+                            <h6 class="heading-small text-muted mb-3">بيانات خاصة بالمشرف</h6>
+
+                            <div class="row">
+                                <!-- نوع المشرف -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="ddlSupervisorType">نوع المشرف</label>
+                                        <asp:DropDownList ID="ddlSupervisorType" runat="server" CssClass="form-control form-control-alternative">
+                                            <asp:ListItem Text="اختر" Value="" />
+                                            <asp:ListItem Text="مشرف 1" Value="1" />
+                                            <asp:ListItem Text="مشرف 2" Value="2" />
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="rfvSupervisorType" runat="server" ControlToValidate="ddlSupervisorType" InitialValue="" ErrorMessage="يرجى اختيار نوع المشرف" CssClass="text-danger" Display="Dynamic" />
+                                    </div>
+                                </div>
+
+                                <!-- نوع شهادة المشرف -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="ddlSupervisorCertificate">نوع شهادة المشرف</label>
+                                        <asp:DropDownList ID="ddlSupervisorCertificate" runat="server" CssClass="form-control form-control-alternative">
+                                            <asp:ListItem Text="اختر" Value="" />
+                                            <asp:ListItem Text="1" Value="1" />
+                                            <asp:ListItem Text="2" Value="2" />
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="rfvSupervisorCertificate" runat="server" ControlToValidate="ddlSupervisorCertificate" InitialValue="" ErrorMessage="يرجى اختيار نوع الشهادة" CssClass="text-danger" Display="Dynamic" />
+                                    </div>
+                                </div>
+
+                                <!-- ملف شهادة المشرف -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="fuSupervisorCertificate">ملف شهادة المشرف</label>
+                                        <asp:FileUpload ID="fuSupervisorCertificate" runat="server" CssClass="form-control form-control-alternative" />
+                                        <asp:RequiredFieldValidator ID="rfvSupervisorCertificateFile" runat="server" ControlToValidate="fuSupervisorCertificate" ErrorMessage="يرجى رفع ملف الشهادة" CssClass="text-danger" Display="Dynamic" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <asp:Label ID="lblValidation" runat="server" CssClass="text-danger" Visible="false" />
+
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" DisplayMode="BulletList" />
+
+
+
+
+
+                        <hr class="my-4">
                     </div>
-                    <input class="form-control" placeholder="اسم المستخدم" type="email">
-                  </div>
-                </div>
 
-                <div class="form-group">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    <div class="text-center">
+                        <asp:Button ID="btnSubmit" runat="server" Text="انشاء الحساب" CssClass="btn btn-primary" ValidationGroup="UserValidation" OnClick="btnSubmit_Click" />
                     </div>
-                    <input class="form-control" placeholder="كلمة المرور" type="password">
-                  </div>
-                </div>
-                
-                <div class="text-center">
-                  <a href='./dashboard.html' class="btn btn-primary my-4">دخول</a>
+
                 </div>
 
-              </form>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>

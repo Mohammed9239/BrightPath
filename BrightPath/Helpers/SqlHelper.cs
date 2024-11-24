@@ -10,7 +10,6 @@ namespace BrightPath.Helpers
 {
     public static class SqlHelper
     {
-
         private static readonly string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"]?.ConnectionString;
 
         /// <summary>
@@ -62,6 +61,20 @@ namespace BrightPath.Helpers
                 connection.Open();
                 object result = command.ExecuteScalar();
                 return result?.ToString(); // Convert to string or return null if result is null
+            }
+        }
+
+        /// <summary>
+        /// Executes a SQL query that returns a single value (e.g., the last inserted ID).
+        /// </summary>
+        public static int ExecuteScalarAndGetId(string sql, Dictionary<string, object> parameters = null)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = CreateCommand(connection, sql, parameters))
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                return Convert.ToInt32(result);
             }
         }
 
