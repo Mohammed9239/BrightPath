@@ -20,7 +20,7 @@
     <!-- CSS Files -->
     <link href="../../Assets/Styles/css.css" rel="stylesheet" />
 
-    <title>Path Bright</title>
+    <title>BrightPath</title>
 
 
 
@@ -61,7 +61,7 @@
                             <div class=" dropdown-header noti-title">
                                 <h6 class="text-overflow m-0">مرحبا!</h6>
                             </div>
-                            <a href="profile.html" class="dropdown-item">
+                            <a href="../Home/Profile.aspx" class="dropdown-item">
                                 <i class="ni ni-single-02"></i>
                                 <span>الملف الشخصي</span>
                             </a>
@@ -204,7 +204,7 @@
                                         <img src="../../Assets/Images/icons/userprfile.png" />
                                     </span>
                                     <div class="media-body mr-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">محمد العمودي</span>
+                                        <span id="txName" runat="server" class="mb-0 text-sm  font-weight-bold"></span>
                                     </div>
                                 </div>
                             </a>
@@ -212,7 +212,7 @@
                                 <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">مرحبا!</h6>
                                 </div>
-                                <a href="profile.html" class="dropdown-item">
+                                <a href="../Home/Profile.aspx" class="dropdown-item">
                                     <i class="ni ni-single-02"></i>
                                     <span>الملف الشخصي</span>
                                 </a>

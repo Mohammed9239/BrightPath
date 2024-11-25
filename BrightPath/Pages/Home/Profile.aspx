@@ -16,7 +16,7 @@
       <div class="container-fluid d-flex align-items-center mb-7">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <h6 class="display-2 text-white  mt-0 mb-4" style="width: max-content;">مرحبا , محمد العمودي</h6>
+            <h6 class="display-3 text-white  mt-0 mb-4" style="width: max-content;">مرحبا , <span style="display:inline" id="txtName" runat="server"></span></h6>
             <a href="#!" class="btn btn-info">تغير كلمة السر</a>
           </div>
         </div>
@@ -36,101 +36,115 @@
 
 
             <div class="card-body">
-              <form>
-                <h6 class="heading-small text-muted mb-4">معلومات المستخدم</h6>
-                <div class="pl-lg-4 mt-6">
+                                <h6 class="heading-small text-muted mb-4">معلومات المستخدم</h6>
 
-                  <div class="row mb-1">
 
-                    <div class="col-lg-4">
-                      <div class="row justify-content-center">
-                        <div class="col-lg-3 order-lg-2">
-                          <div class="card-profile-image">
-                            <a href="#">
-                              <img src="./assets/img/icons/avatardefault_92824.png" class="rounded-circle">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4" style="background: none;">
-                        <div class="d-flex justify-content-between">
-                          <i class="btn btn-sm btn-info mr-4"></i>
-                          <input name="FavImg1" onchange="changeImgAdd1(this)" id="imgUser" style="display: none;" type="file">
 
-                          <label for="imgUser" class="btn btn-sm btn-default float-right">تغير الصورة</label>
-                        </div>
-                      </div>
-                    </div>
+                <div class="pl-lg-4">
 
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">نوع المستخدم</label>
-                        <select class="form-control form-control-alternative">
-                            <option>مدير</option>
-                            <option>مشرف</option>
-                            <option>ابن</option>
-                            <option>اباء</option>
-                        </select>
-                      </div>
-                    </div>
+    <asp:ScriptManager runat="server" />
 
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">اسم المستخدم</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="mohammed_75">
-                      </div>
-                    </div>
-
-                    
-                  </div>
-
-                  <div class="row">
-
-                    <div class="col-lg-4">
-                    </div>
-
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">الاسم الكامل</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="محمد العمودي">
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">تاريخ الميلاد</label>
-                        <input type="date" id="input-username" class="form-control form-control-alternative" placeholder="محمد العمودي">
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                    </div>
-
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">الهاتف</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="96650000000">
-                      </div>
-                    </div>  
-
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">البريد الالكتروني</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="mail@mail.com">
-                      </div>
-                    </div>
-
-                  </div>
-
-                </div>
-                <hr class="my-4" />
-
-                <div class="text-center">
-                  <input type="submit" name="submit" class="btn btn-primary" value="تعديل" onclick="">
-                </div>
-
-              </form>
+    <div class="row">
+        <!-- نوع المستخدم -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="txtUserType">نوع المستخدم</label>
+                <asp:TextBox ID="txtUserType" runat="server" CssClass="form-control form-control-alternative" ReadOnly="true" />
             </div>
+        </div>
+
+        <!-- اسم المستخدم -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="txtUsername">اسم المستخدم</label>
+                <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control form-control-alternative" ReadOnly="true" />
+            </div>
+        </div>
+
+        <!-- الاسم الكامل -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="txtFullName">الاسم الكامل</label>
+                <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control form-control-alternative" ReadOnly="true" />
+            </div>
+        </div>
+
+        <!-- تاريخ الميلاد -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="txtBirthDate">تاريخ الميلاد</label>
+                <asp:TextBox ID="txtBirthDate" runat="server" CssClass="form-control form-control-alternative" TextMode="Date" ReadOnly="true" />
+            </div>
+        </div>
+
+        <!-- الهاتف -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="txtPhone">الهاتف</label>
+                <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control form-control-alternative" ReadOnly="true" />
+            </div>
+        </div>
+
+        <!-- البريد الإلكتروني -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="txtEmail">البريد الإلكتروني</label>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-alternative" ReadOnly="true" />
+            </div>
+        </div>
+    </div>
+
+    <!-- بيانات خاصة بالمشرف -->
+    <div id="ConsultantDataDiv" runat="server" visible="false">
+        <hr class="my-4">
+        <h6 class="heading-small text-muted mb-3">بيانات خاصة بالمشرف</h6>
+
+        <div class="row">
+            <!-- نوع المشرف -->
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="ddlSupervisorType">نوع المشرف</label>
+                    <asp:DropDownList ID="ddlSupervisorType" runat="server" CssClass="form-control form-control-alternative" Enabled="false">
+                        <asp:ListItem Text="اختر" Value="" />
+                        <asp:ListItem Text="مشرف 1" Value="1" />
+                        <asp:ListItem Text="مشرف 2" Value="2" />
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <!-- نوع شهادة المشرف -->
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="ddlSupervisorCertificate">نوع شهادة المشرف</label>
+                    <asp:DropDownList ID="ddlSupervisorCertificate" runat="server" CssClass="form-control form-control-alternative" Enabled="false">
+                        <asp:ListItem Text="اختر" Value="" />
+                        <asp:ListItem Text="1" Value="1" />
+                        <asp:ListItem Text="2" Value="2" />
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <!-- ملف شهادة المشرف -->
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="fuSupervisorCertificate">ملف شهادة المشرف</label>
+                    <asp:HyperLink ID="hlDownloadSupervisorCertificate" runat="server" Text="عرض الشهادة" CssClass="btn btn-link" Target="_blank" Visible="false" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <asp:Button ID="btnSubmit" runat="server" Text="تعديل" CssClass="btn btn-primary" OnClick="btnSubmit_Click" />
+    </div>
+
+</div>
+
+
+
+            </div>
+
+
           </div>
         </div>
         
