@@ -41,7 +41,7 @@ namespace BrightPath.Pages.Users
                 txtEmail.Text = userData["Email"].ToString();
 
                 int userType = Convert.ToInt32(userData["UserType"].ToString());
-                string userTypeString = MainHelper.GetEnumDescriptionFromInt<UserType>(userType);
+                string userTypeString = EnumHelper.GetEnumDescriptionFromInt<UserType>(userType);
                 txtUserType.Text = userTypeString;
 
                 if (userData["UserType"].ToString() == "2") // "مشرف"

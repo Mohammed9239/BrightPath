@@ -180,7 +180,7 @@
                         </div>
 
 
-                        <asp:Label ID="lblValidation" runat="server" CssClass="text-danger" Visible="false" />
+                        <asp:Label ID="lblMessage" runat="server" CssClass="text-danger" Visible="false" />
 
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" DisplayMode="BulletList" />
 

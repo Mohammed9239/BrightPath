@@ -1,12 +1,67 @@
-﻿using System;
+﻿using BrightPath.Helpers;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web.UI.WebControls;
+
+
 
 
 
 public static class MainHelper
+{
+
+
+    public static void PopulateDropDownList(DropDownList dropdown, string tableName, string valueField, string textField, string whereClause = null, Dictionary<string, object> parameters = null)
+    {
+        // Fetch data from the database with an optional WHERE clause
+        var data = GetDataFromDatabase(tableName, valueField, textField, whereClause, parameters);
+
+        // Bind data to the DropDownList
+        dropdown.DataSource = data;
+        dropdown.DataValueField = "Value";
+        dropdown.DataTextField = "Text";
+        dropdown.DataBind();
+
+        // Optionally add a default "Select" item
+        dropdown.Items.Insert(0, new ListItem("اختر", ""));
+    }
+
+    private static List<SelectItem> GetDataFromDatabase(string tableName, string valueField, string textField, string whereClause = null, Dictionary<string, object> parameters = null)
+    {
+        // Build the SQL query
+        string sql = $"SELECT {valueField}, {textField} FROM {tableName}";
+        if (!string.IsNullOrEmpty(whereClause))
+        {
+            sql += " WHERE " + whereClause;
+        }
+
+        // Fetch data from the database
+        DataTable table = SqlHelper.ReadData(sql, parameters);
+
+        // Convert the DataTable to a List<SelectItem>
+        var data = new List<SelectItem>();
+        foreach (DataRow row in table.Rows)
+        {
+            data.Add(new SelectItem
+            {
+                Value = row[valueField]?.ToString(),
+                Text = row[textField]?.ToString()
+            });
+        }
+
+        return data;
+    }
+
+
+}
+
+
+public static class EnumHelper
 {
     public static string GetEnumDescriptionFromInt<TEnum>(int value) where TEnum : Enum
     {
@@ -90,4 +145,11 @@ public static class CryptoHelper
 
 
 
+}
+
+
+public class SelectItem
+{
+    public string Value { get; set; }
+    public string Text { get; set; }
 }

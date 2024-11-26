@@ -77,8 +77,8 @@ namespace BrightPath.Pages.Users
             if (usernameExists > 0)
             {
                 // Username already exists
-                lblValidation.Text = "اسم المستخدم موجود بالفعل.";
-                lblValidation.Visible = true;
+                lblMessage.Text = "اسم المستخدم موجود بالفعل.";
+                lblMessage.Visible = true;
                 return;
             }
 
@@ -90,8 +90,8 @@ namespace BrightPath.Pages.Users
             if (emailExists > 0)
             {
                 // Email already exists
-                lblValidation.Text = "البريد الإلكتروني موجود بالفعل.";
-                lblValidation.Visible = true;
+                lblMessage.Text = "البريد الإلكتروني موجود بالفعل.";
+                lblMessage.Visible = true;
                 return;
             }
 
@@ -168,10 +168,10 @@ namespace BrightPath.Pages.Users
             }
 
             // Success message or redirection
-            lblValidation.Text = "تم حفظ البيانات بنجاح.";
-            lblValidation.ForeColor = System.Drawing.Color.Green;
+            lblMessage.Text = "تم حفظ البيانات بنجاح.";
+            lblMessage.ForeColor = System.Drawing.Color.Green;
 
-            lblValidation.Visible = true;
+            lblMessage.Visible = true;
         }
 
 

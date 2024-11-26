@@ -32,7 +32,7 @@ namespace BrightPath.Pages.Users
                 WHEN UserType = 1 THEN N'مدير' 
                 WHEN UserType = 2 THEN N'مستشار' 
                 WHEN UserType = 3 THEN N'ولي امر' 
-                WHEN UserType = 3 THEN N'طفل' 
+                WHEN UserType = 4 THEN N'طفل' 
                 ELSE N'' 
             END AS UserTypeDescription
         FROM [dbo].[Users]";
