@@ -27,14 +27,11 @@ namespace BrightPath.Pages.Sections
         {
             string sql = @"
             SELECT 
-                Id, 
-                Name, 
-                CASE 
-                    WHEN Type = 1 THEN N'قسم 1'
-                    WHEN Type = 2 THEN N'قسم 2'
-                    ELSE N'غير محدد'
-                END AS TypeDescription
-            FROM [dbo].[Sections]";
+                S.Id, 
+                S.Name, 
+                C.Name as TypeDescription
+            FROM [dbo].[Sections] S
+            LEFT JOIN [dbo].[Constraints] C ON S.Type = C.Id AND GroupId = 1000";
 
             return SqlHelper.ReadData(sql);
         }

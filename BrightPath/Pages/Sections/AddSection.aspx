@@ -50,9 +50,6 @@
                                     <label class="form-control-label" for="ddlDepartmentType">نوع القسم</label>
                                     <asp:DropDownList ID="ddlDepartmentType" CssClass="form-control form-control-alternative"
                                         runat="server">
-                                        <asp:ListItem Text="اختر نوع القسم" Value="" />
-                                        <asp:ListItem Text="نوع 1" Value="1" />
-                                        <asp:ListItem Text="نوع 2" Value="2" />
                                     </asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfvDepartmentType" ControlToValidate="ddlDepartmentType"
                                         InitialValue="" ErrorMessage="يرجى اختيار نوع القسم"

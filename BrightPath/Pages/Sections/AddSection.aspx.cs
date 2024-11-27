@@ -12,6 +12,17 @@ namespace BrightPath.Pages.Sections
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                var parameters = new Dictionary<string, object>
+                {
+                    { "@GroupId", 1000 }
+                };
+                MainHelper.PopulateDropDownList(ddlDepartmentType, "Constraints", "Id", "Name", "GroupId = @GroupId", parameters);
+
+            }
+
         }
 
 
