@@ -108,56 +108,57 @@
 
                     <!-- Navigation -->
                     <ul class="navbar-nav">
-                        <li class="nav-item  active ">
+
+                        <li id="Dashboard" runat="server" class="nav-item  active ">
                             <a class="nav-link  active " href="../Home/Dashboard.aspx">
                                 <i class="fa fa-tv text-primary"></i>
                                 لوحة التحكم
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="Sections" runat="server" class="nav-item">
                             <a class="nav-link " href="../Sections/Index.aspx">
                                 <i class="fa fa-layer-group text-blue"></i>
                                 الاقسام
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="Subscriptions" runat="server" class="nav-item">
                             <a class="nav-link " href="../Subscriptions/Index.aspx">
                                 <i class="fa fa-list text-orange"></i>
                                 الاشتراكات
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="Appointments" runat="server" class="nav-item">
                             <a class="nav-link " href="../Appointments/Index.aspx">
                                 <i class="fa fa-calendar-check text-success"></i>
                                 المواعيد
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="Progress" runat="server" class="nav-item">
                             <a class="nav-link " href="../Reports/Progress.aspx">
                                 <i class="fas fa-chart-line text-red"></i>
                                 متابعة الاداء
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="Reports" runat="server" class="nav-item">
                             <a class="nav-link" href="../Reports/Index.aspx">
                                 <i class="fas fa-chart-simple text-yellow"></i>
                                 التقارير
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="Users" runat="server" class="nav-item">
                             <a class="nav-link" href="../Users/Index.aspx">
                                 <i class="fas fa-users text-pink"></i>
                                 المستخدمين
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li id="AboutUs" runat="server" class="nav-item">
                             <a class="nav-link" href="../Home/Profile.aspx">
                                 <i class="far fa-brands fa-readme text-info"></i>
                                 معلومات عنا

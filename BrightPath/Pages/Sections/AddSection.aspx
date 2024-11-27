@@ -24,7 +24,7 @@
                             <h3 class="mb-0">اضافة قسم جديد</h3>
                         </div>
                         <div class="col-4 text-left">
-                            <a href="sections.html" class="btn btn-sm btn-primary">القائمة</a>
+                            <a href="Index" class="btn btn-sm btn-primary">القائمة</a>
                         </div>
                     </div>
                 </div>

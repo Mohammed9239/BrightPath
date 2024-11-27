@@ -94,7 +94,7 @@ OUTPUT INSERTED.ID
                 else
                 {
                     // Failure: Show an error message
-                    lblMessage.Text = "حصل خطاء";
+                    lblMessage.Text = "حصل خطأ أثناء حفظ البيانات.";
                     lblMessage.ForeColor = System.Drawing.Color.Red;
                     lblMessage.Visible = true;
                 }

@@ -155,12 +155,12 @@ namespace BrightPath.Pages.Home
                 (@UserId, @ConsType, @CerType, @CerFile);";
 
                 var consultantParams = new Dictionary<string, object>
-        {
-            { "@UserId", userId },
-            { "@ConsType", consType },
-            { "@CerType", cerType },
-            { "@CerFile", cerFile }
-        };
+                {
+                    { "@UserId", userId },
+                    { "@ConsType", consType },
+                    { "@CerType", cerType },
+                    { "@CerFile", cerFile }
+                };
 
                 // Execute Consultants query
                 SqlHelper.ExecuteCommand(consultantInsertSql, consultantParams);

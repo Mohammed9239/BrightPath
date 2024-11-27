@@ -99,7 +99,6 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="ddlUserType">نوع المستخدم</label>
                                     <asp:DropDownList ID="ddlUserType" runat="server" CssClass="form-control form-control-alternative" AutoPostBack="true" OnSelectedIndexChanged="ddlUserType_SelectedIndexChanged">
-                                        <asp:ListItem Text="مدير" Value="1"></asp:ListItem>
                                         <asp:ListItem Text="مشرف" Value="2"></asp:ListItem>
                                         <asp:ListItem Text="ولي امر" Value="3"></asp:ListItem>
                                         <asp:ListItem Text="طفل" Value="4"></asp:ListItem>
