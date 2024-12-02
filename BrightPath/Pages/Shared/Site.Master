@@ -123,12 +123,6 @@
                             </a>
                         </li>
 
-                        <li id="Subscriptions" runat="server" class="nav-item">
-                            <a class="nav-link " href="../Subscriptions/Index.aspx">
-                                <i class="fa fa-list text-orange"></i>
-                                الاشتراكات
-                            </a>
-                        </li>
 
                         <li id="Appointments" runat="server" class="nav-item">
                             <a class="nav-link " href="../Appointments/Index.aspx">
@@ -144,19 +138,6 @@
                             </a>
                         </li>
 
-                        <li id="Reports" runat="server" class="nav-item">
-                            <a class="nav-link" href="../Reports/Index.aspx">
-                                <i class="fas fa-chart-simple text-yellow"></i>
-                                التقارير
-                            </a>
-                        </li>
-
-                        <li id="Users" runat="server" class="nav-item">
-                            <a class="nav-link" href="../Users/Index.aspx">
-                                <i class="fas fa-users text-pink"></i>
-                                المستخدمين
-                            </a>
-                        </li>
 
                         <li id="AboutUs" runat="server" class="nav-item">
                             <a class="nav-link" href="../Home/Profile.aspx">

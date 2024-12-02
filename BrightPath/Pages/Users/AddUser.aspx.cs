@@ -66,7 +66,6 @@ namespace BrightPath.Pages.Users
             int userType = Convert.ToInt32(ddlUserType.SelectedValue);
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            string encryptedPassword = CryptoHelper.Encrypt(password);
 
 
             // Validate if the username already exists
@@ -112,7 +111,7 @@ namespace BrightPath.Pages.Users
                 { "@BirthDate", birthDate },
                 { "@UserType", userType },
                 { "@UserName", username },
-                { "@Password", encryptedPassword }
+                { "@Password", password }
             };
 
             // Execute Users query and get the new UserId

@@ -13,7 +13,7 @@ namespace BrightPath.Helpers
             [Description("مدير")]
             Admin = 1,
 
-            [Description("مستشار")]
+            [Description("")]
             Consultants = 2,
 
             [Description("ولي أمر")]

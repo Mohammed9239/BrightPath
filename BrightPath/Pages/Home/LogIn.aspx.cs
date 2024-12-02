@@ -34,11 +34,9 @@ namespace BrightPath.Pages.Home
                 string storedPassword = userRow["Password"].ToString();
                 int userId = Convert.ToInt32(userRow["Id"]);
 
-                // Decrypt the password from the database
-                string decryptedPassword = CryptoHelper.Decrypt(storedPassword);
 
                 // Compare the entered password with the decrypted password
-                if (decryptedPassword.Equals(password, StringComparison.Ordinal))
+                if (storedPassword.Equals(password, StringComparison.Ordinal))
                 {
                     // Successful login: Store user ID in session
                     Session["UserId"] = userId;

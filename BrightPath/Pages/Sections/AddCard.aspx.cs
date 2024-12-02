@@ -19,11 +19,12 @@ namespace BrightPath.Pages.Sections
 
                 MainHelper.PopulateDropDownList(ddlSection, "Sections", "Id", "Name");
 
+                int userId = Convert.ToInt32(Session["UserId"].ToString());
                 var parameters = new Dictionary<string, object>
                 {
-                    { "@UserType", (int)UserType.Chaild }
+                    { "@Id", userId }
                 };
-                MainHelper.PopulateDropDownList(ddlUser, "Users", "Id", "Name", "UserType = @UserType", parameters);
+                MainHelper.PopulateDropDownList(ddlUser, "Users", "Id", "Name", "Id = @Id", parameters);
 
             }
 

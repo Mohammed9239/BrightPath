@@ -123,7 +123,6 @@
     <Content Include="Assets\Styles\css.css" />
     <Content Include="Assets\Styles\fontAwesome.css" />
     <Content Include="Global.asax" />
-    <Content Include="Admin.aspx" />
     <Content Include="index.html" />
     <Content Include="Pages\Appointments\Index.aspx" />
     <Content Include="Pages\Appointments\AddAppointment.aspx" />
@@ -156,13 +155,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MainHelper.cs" />
     <Compile Include="Helpers\EnumDatabaseVariables.cs" />
